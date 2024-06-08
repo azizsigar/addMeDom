@@ -1,0 +1,9 @@
+#faqAnswer{
+    visibility: hidden;
+}
+h2{
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
