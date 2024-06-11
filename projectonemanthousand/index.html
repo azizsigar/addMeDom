@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aziz project api</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="scripts.js" ></script>
+    <title>Vibrant Example</title>
 </head>
 <body>
-<div>
-   
-    <h1>random dog pics</h1>
-    <img src="" alt="random dog" class="dog-img" id="imageArea">
-    <button id="button">random dog</button>
-</div>
+    <img id="my-image" src="pp.jpg" alt="Your image">
+    <div id="colorful-div">This is a colorful div.</div>
+
+    <script src="https://unpkg.com/node-vibrant@3.1.1/dist/vibrant.min.js"></script>
+    <script>
+        window.onload = function() {
+            let img = document.querySelector('#my-image');
+            let div = document.querySelector('#colorful-div');
+
+            Vibrant.from(img.src).getPalette().then(palette => {
+                let dominantColor = palette.Vibrant.rgb;
+                console.log(`The dominant color in the image is: rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`);
+                div.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+                div.textContent = `The vibrant color in the image is: rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+            });
+        }
+    </script>
 </body>
 </html>
