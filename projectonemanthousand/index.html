@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vibrant Example</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <img id="my-image" src="pp.jpg" alt="Your image">
@@ -18,7 +19,7 @@
             Vibrant.from(img.src).getPalette().then(palette => {
                 let dominantColor = palette.Vibrant.rgb;
                 console.log(`The dominant color in the image is: rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`);
-                div.style.backgroundColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+                img.style.boxShadow = `0 0 10px 5px rgba(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]}, 0.7)`;
                 div.textContent = `The vibrant color in the image is: rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
             });
         }

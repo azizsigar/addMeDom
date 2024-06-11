@@ -1,4 +1,10 @@
 img{
     height: 25rem;
-    width: 25rem;
+    width: 20rem;
+}
+*{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
