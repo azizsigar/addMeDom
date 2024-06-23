@@ -18,14 +18,8 @@ img{
     height: 10rem;
     background-color: purple;
 }
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1a1a1a;
-        color: #ffffff;
-    }
-    img{
-        width: 10rem;
-        height: 10rem;
+@media (min-width: 768px) {
+    .hidden-content{
+        visibility: visible;
     }
 }
-/* Add your dark mode styles here */
