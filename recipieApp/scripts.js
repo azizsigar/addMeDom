@@ -1,11 +1,13 @@
+
 document.addEventListener("DOMContentLoaded", (event) => {
     const button = document.getElementById("search-button");
     const searchBox = document.getElementById("search-box");
     const recipeContainer = document.getElementById("recipe-container");
-  
+    
+
     const fetchRecipes = async (query) => {
-      try {
-        const data = await fetch(
+        try {
+            const data = await fetch(
           `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
         );
         const response = await data.json();
@@ -38,13 +40,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             mealInstructions.classList.add("meal-instructions");
             mealInstructions.textContent = meal.strInstructions;
             mealContainer.appendChild(mealInstructions);
-  
-            // Create and append the meal category
+            
             const mealCategory = document.createElement("p");
             mealCategory.textContent = `Category: ${meal.strCategory}`;
             mealContainer.appendChild(mealCategory);
-  
-            // Append meal container to recipe container
             recipeContainer.appendChild(mealContainer);
   
             // Toggle meal instructions visibility on image click
@@ -57,9 +56,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
           const noMealsMessage = document.createElement("p");
           noMealsMessage.textContent = "No meals found for this query.";
           recipeContainer.appendChild(noMealsMessage);
+          console.log("no meals found for this query")
         }
       } catch (error) {
-        console.error("An error occurred:", error);
+        console.error("An error occurred api:", error);
       }
     };
   
