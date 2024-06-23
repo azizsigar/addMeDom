@@ -8,7 +8,7 @@ function showLoadingPage() {
         setTimeout(() => {
             resolve();
             console.log('Loading complete!');
-        }, 2000);
+        }, 12000);
     });
 }
 
