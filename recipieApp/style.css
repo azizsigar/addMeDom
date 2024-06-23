@@ -1,0 +1,31 @@
+body {
+    color: black;
+}
+img{
+    width: 10rem;
+    height: 10rem;
+}
+.meal-instructions {
+    display: none; /* Initially hidden */
+  }
+  .meal-instructions.show {
+    display: block; /* Visible when 'show' class is present */
+  }
+  
+.hidden-content{
+    visibility: hidden;
+    width: 10rem;
+    height: 10rem;
+    background-color: purple;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+    img{
+        width: 10rem;
+        height: 10rem;
+    }
+}
+/* Add your dark mode styles here */
