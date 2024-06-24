@@ -1,13 +1,18 @@
+// import from file
+import {apiKey}  from './apiKey.js';  // Ensure the correct path to the apiKey.js file
+
 document.addEventListener("DOMContentLoaded", () => {
   // Function to get a random dog image from the Dog CEO API
   function getRandomDog() {
-    fetch("https://dog.ceo/api/breeds/image/random")
+    // use as a fetch url to veriable
+    fetch(apiKey)
       .then((response) => response.json())
       .then((data) => {
         const dogImage = document.getElementById("imageArea");
         const colorfulDiv = document.getElementById("colorful-div");
         dogImage.src = data.message;
 
+        // Assuming Vibrant.js is included in your project
         Vibrant.from(dogImage.src)
           .getPalette()
           .then((palette) => {
@@ -22,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error fetching color palette:", error);
           });
       })
-      .catch((error) =>
+      .catch((error) => 
         console.error("Error fetching random dog image:", error)
       );
   }

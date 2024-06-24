@@ -1,15 +1,17 @@
-// Import any necessary modules or libraries here
+export const createWelcomeElement = () => {
+    const welcomePage = document.createElement('div');
+    console.log("wellcomePage")
+    welcomePage.innerHTML = String.raw`
+      <h1>Welcome</h1>
+        <p>In this game, you will be given a random dog photo. Your goal is to find the MARS photo among the other dog photos on the screen. 
 
-// Define your view function
-function renderView() {
-    // Create and manipulate DOM elements here
-    const container = document.createElement('div');
-    container.textContent = 'Welcome to my website!';
-    
-
-    // Append the container to the document body or any other element
-    document.body.appendChild(container);
-}
-
-// Call the view function to render the view
-renderView();
+        How to Play:
+        
+        Photo Selection: In each round, you will be shown a dog photo.
+        Match the Photo: Find the same photo among the other photos on the screen.
+        Score Points: 
+        Attempt to find Mars with the fewest tries (world record: 0).
+        Good luck!</p>
+    `;
+    return welcomePage;
+  };

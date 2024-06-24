@@ -1,10 +1,19 @@
 img{
-    height: 25rem;
-    width: 20rem;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
 }
-*{
+main{
+    width: 99%;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: auto;
+    
+}
+#mars{
+    height: 10rem;
+    width: 10rem;
 }
